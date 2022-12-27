@@ -1,0 +1,35 @@
+/* This CSS is common to all pages */
+
+* {
+  box-sizing: border-box;
+  font-family: NotoSans, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+menu {
+  margin: 0;
+}
+
+svg {
+  height: 100%;
+}
+
+.navitem {
+  padding: 3px 10px;
+}
+.navitem.is-active {
+  background-color: #eee;
+}
