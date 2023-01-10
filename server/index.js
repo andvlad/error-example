@@ -5,6 +5,7 @@ const fastify = require('fastify');
 const path = require('path');
 const vite = require('vite');
 const { renderPage } = require('vite-plugin-ssr');
+const { mountRoutes } = require('./routes');
 
 const defaultLanguage = 'en';
 const isProduction = process.env.NODE_ENV === 'production';
@@ -16,6 +17,8 @@ const root = `${__dirname}/..`;
 
   await app.register(middie);
   await app.register(compress);
+
+  mountRoutes(app);
 
   if (isProduction) {
     const distPath = path.join(root, '/dist/client/assets');

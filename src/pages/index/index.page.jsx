@@ -1,4 +1,5 @@
-import { useStore } from '@nanostores/preact'
+//import { useStore } from '@nanostores/preact'
+import { useStore } from '@src/common/hooks'
 import { messages } from './index.translation'
 import { Counter } from './Counter'
 
