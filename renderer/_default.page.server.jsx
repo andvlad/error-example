@@ -18,6 +18,7 @@ export async function render(pageContext) {
   const { Page, pageProps, documentProps, locale } = pageContext;
   const title = documentProps?.title || 'test';
   const desc = documentProps?.description || 'test';
+  const cache = JSON.stringify(i18n.cache);
 
   localeStore.set(locale);
 
@@ -38,6 +39,10 @@ export async function render(pageContext) {
         <meta name="description" content="${desc}" />
         <title>${title}</title>
       </head>
+      <script>
+        window.initialLocale = '${locale}';
+        window.initialCache = '${dangerouslySkipEscape(cache)}';
+      </script>
       <body>
         ${dangerouslySkipEscape(pageHtml)}
       </body>
